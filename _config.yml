@@ -1,1 +1,44 @@
-theme: jekyll-theme-modernist
+theme: minima
+
+author: Epona
+email: datouhaoruijie@gmail.com
+
+minima:
+  date_format: "%b %-d, %Y"
+
+  # generate social links in footer
+  social_links:
+    twitter: kappelong
+    github:  SimuraEpona
+    rss: rss
+    # dribbble: jekyll
+    # facebook: jekyll
+    # flickr:   jekyll
+    # instagram: jekyll
+    # linkedin: jekyll
+    # pinterest: jekyll
+    # youtube: jekyll
+    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
+    # youtube_channel_name: CloudCannon
+    # telegram: jekyll
+    # googleplus: +jekyll
+    # microdotblog: jekyll
+
+    # Mastodon instances
+    # mastodon:
+    # - username: jekyll
+    #   instance: example.com
+    # - username: jekyll2
+    #   instance: example.com
+
+disqus:
+  shortname: simuraepona
+
+plugins:
+  - jekyll-feed
+defaults:
+  -
+    scope:
+      path: "" # 一个空的字符串代表项目中所有的文件
+    values:
+      layout: "default"
