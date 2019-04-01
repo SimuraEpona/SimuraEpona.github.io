@@ -32,7 +32,7 @@ minima:
     #   instance: example.com
 
 disqus:
-  shortname: simuraepona
+  shortname: blog-efievddr6w
 
 plugins:
   - jekyll-feed
