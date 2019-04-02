@@ -1,6 +1,6 @@
 ---
 title:  5个让你的开发更加轻松的辅助函数
-comments: true
+tags: [Laravel，PHP, TIPS]
 ---
 
 > 本文为翻译文章，原文章地址： [5 Laravel Helpers to Make Your Life Easier](https://laravel-news.com/5-laravel-helpers-make-life-easier)

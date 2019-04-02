@@ -5,7 +5,7 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col one-half">
-      <h2 class="footer-heading">{{ site.title | escape }}</h2>
+<!--      <h2 class="footer-heading">{{ site.title | escape }}</h2>-->
         <ul class="contact-list">
           <li class="p-name">
             {%- if site.author -%}
@@ -27,8 +27,10 @@
       <div class="social-links">
         {%- include social.html -%}
       </div>
+      <span id="busuanzi_container_site_uv">本站总访客<span id="busuanzi_value_site_uv"></span></span>
+      <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span></span>
     </div>
 
   </div>
-
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </footer>

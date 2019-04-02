@@ -35,6 +35,8 @@ disqus:
   shortname: blog-efievddr6w
 
 show_excerpts: true
+title: Epona's blog
+description: There's nothing wrong with having a little fun!
 excerpt_separator: <!--more-->
 
 plugins:
