@@ -21,6 +21,7 @@ $object->albums->rock->count = 75;
 $count = data_get($object, 'albums.rock.count'); // 75
 $avgCost = data_get($object, 'albums.rock.avg_cost', 0); // 0
 ```
+<!--more-->
 
 如果在点符号连接中使用通配符'*'将会返回一个数组。
 

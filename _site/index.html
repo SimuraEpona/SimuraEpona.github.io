@@ -30,7 +30,29 @@
           <a class="post-link" href="/2018/06/01/five-helpers-to-make-your-life-easier.html">
             5个让你的开发更加轻松的辅助函数
           </a>
-        </h3></li></ul>
+        </h3><blockquote>
+  <p>本文为翻译文章，原文章地址： <a href="https://laravel-news.com/5-laravel-helpers-make-life-easier">5 Laravel Helpers to Make Your Life Easier</a></p>
+</blockquote>
+
+<blockquote>
+  <p>在Laravel框架中有许多的辅助函数来帮助开发者更加有效率的进行开发。在这篇文章中，我会列出我个人比较喜欢的5个辅助函数</p>
+</blockquote>
+
+<h2 id="data_get">data_get()</h2>
+<p><code class="highlighter-rouge">data_get()</code>辅助方法能够让你使用[.]符号来获取数组或者对象中的值。’array_get()’方法也是同样的道理。如果数组或者对象的key不存在的话，这个方法第三个可选参数可以设置一个默认值。</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$array</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'albums'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'rock'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'count'</span> <span class="o">=&gt;</span> <span class="mi">75</span> <span class="p">]]];</span>
+
+<span class="nv">$count</span> <span class="o">=</span> <span class="nx">data_get</span><span class="p">(</span><span class="nv">$array</span><span class="p">,</span> <span class="s1">'albums.rock.count'</span><span class="p">);</span> <span class="c1">// 75
+</span><span class="nv">$avgCost</span> <span class="o">=</span> <span class="nx">data_get</span><span class="p">(</span><span class="nv">$array</span><span class="p">,</span> <span class="s1">'albums.rock.avg_cost'</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// 0
+</span>
+<span class="nv">$object</span><span class="o">-&gt;</span><span class="na">albums</span><span class="o">-&gt;</span><span class="na">rock</span><span class="o">-&gt;</span><span class="na">count</span> <span class="o">=</span> <span class="mi">75</span><span class="p">;</span>
+
+<span class="nv">$count</span> <span class="o">=</span> <span class="nx">data_get</span><span class="p">(</span><span class="nv">$object</span><span class="p">,</span> <span class="s1">'albums.rock.count'</span><span class="p">);</span> <span class="c1">// 75
+</span><span class="nv">$avgCost</span> <span class="o">=</span> <span class="nx">data_get</span><span class="p">(</span><span class="nv">$object</span><span class="p">,</span> <span class="s1">'albums.rock.avg_cost'</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// 0
+</span></code></pre></div></div>
+
+</li></ul>
 
     <p class="feed-subscribe"><svg class="svg-icon orange"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg><a href="/feed.xml">Subscribe</a></p></div>
 
