@@ -13,7 +13,7 @@ layout: default
                 {%- if page.tags.size > 0 -%}
                 <div class="post-tags">
                     {%- for tag in page.tags -%}
-                    <span class="badge post-tag">{{tag}}</span>
+                    <a href="/tags#{{tag}}" class="waves-effect waves-light btn-small post-tag">{{tag}}</a>
                     {%- endfor -%}
                 </div>
                 {%- endif -%}

@@ -2607,9 +2607,9 @@ h6 { font-size: 1.2rem; }
 
 .site-header > .wrapper { display: flex; justify-content: space-between; align-items: center; height: 80px; }
 .site-header > .wrapper .site-title { color: #FFFFFF; margin-left: 15px; font-size: 30px; }
-.site-header > .wrapper .site-nav { box-shadow: none; height: 100%; width: 60%; line-height: 100%; margin-right: 15px; display: flex; justify-content: flex-end; align-items: center; font-size: 20px; }
+.site-header > .wrapper .site-nav { box-shadow: none; height: 100%; width: 60%; line-height: 100%; margin-right: 50px; display: flex; justify-content: flex-end; align-items: center; font-size: 20px; }
 
-.page-content { position: relative; background-color: #f5f5f5; padding-bottom: 180px; min-height: 700px; }
+.page-content { position: relative; background-color: #f5f5f5; padding-bottom: 150px; min-height: 700px; }
 .page-content .wrapper { background-color: #FFFFFF; width: 60%; margin-left: 20%; padding-top: 20px; }
 .page-content .wrapper .home { margin-left: 10px; margin-right: 10px; }
 .page-content .feed-subscribe { margin-bottom: 0; }
@@ -2624,7 +2624,7 @@ span.badge { color: #ffffff; }
 
 .post-tags { display: flex; }
 
-.post-tag { border-radius: 10px; }
+.post-tag { border-radius: 5px; margin-left: 5px; }
 
 .post-tags .post-tag:nth-child(n+1) { background-color: #5e35b1; }
 
@@ -2636,9 +2636,10 @@ span.badge { color: #ffffff; }
 
 .post-tags .post-tag:nth-child(n+5) { background-color: #ea80fc; }
 
-.site-footer { position: fixed; left: 0; bottom: 0; width: 100vw; }
+.site-footer { position: fixed; z-index: 2; left: 0; bottom: 0; width: 100vw; padding-top: 5px; }
 
-.footer-container { max-height: 200px; }
+.footer-container { max-height: 150px; }
+.footer-container .row { margin-bottom: 0; }
 
 .social-media-list { display: flex; align-items: center; justify-content: flex-start; }
 .social-media-list :not(:first-child) { margin-left: 10px; }
@@ -2666,4 +2667,16 @@ span.badge { color: #ffffff; }
 
 .post-header { display: flex; flex-direction: column; align-items: flex-start; }
 .post-header .post-title { margin: 0; }
-.post-header .author-and-time { margin-top: 1rem; display: flex; }
+.post-header .author-and-time { margin-top: 1rem; display: flex; align-items: center; }
+
+.tags-content { padding-left: 15px; padding-right: 15px; }
+
+.tags-title { display: flex; justify-content: center; align-items: center; }
+
+.tag-items { margin-bottom: 15px; }
+
+.tag-title { display: flex; align-items: center; justify-content: flex-start; margin-left: 10px; }
+
+.tag-post:not(:first-child) { margin-top: 10px; }
+
+.tag-post { margin-bottom: 10px; }
