@@ -9,7 +9,7 @@ layout: default
         {% for tag in site.tags %}
         {% assign t = tag | first %}
         {% assign posts = tag | last %}
-        <a class="tag-item grey lighten-3" href="/tags#{{t}}">{{t | replace:" ","-" }}</a>
+        <a class="tag-item grey lighten-3" href="/tags#{{t}}">#{{t | replace:" ","-" }}</a>
         {% endfor %}
     </div>
 
@@ -17,7 +17,7 @@ layout: default
     {% assign t = tag | first %}
     {% assign posts = tag | last %}
 
-    <div class="tag-title" id="{{t | replace:' ','-' }}">{{ t | replace:" ","-" }}</div>
+    <div class="tag-title" id="{{t | replace:' ','-' }}">#{{ t | replace:" ","-" }}</div>
     {%- for post in site.posts -%}
     {% if post.tags contains t %}
     <div class="tag-post">
