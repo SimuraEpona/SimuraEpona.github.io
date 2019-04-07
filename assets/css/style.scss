@@ -243,6 +243,24 @@ span.badge {
   }
 }
 
+.donate {
+  display: flex;
+  flex-direction: column;
+
+  .donate-imgs {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 20%;
+    }
+
+    img:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}
+
 // TAGS-PAGE
 .tags-content {
   padding-left: 15px;

@@ -22,6 +22,7 @@ layout: default
         <div class="post-content e-content" itemprop="articleBody">
             {{ content }}
         </div>
+        {%- include donate.html -%}
         {%- if site.disqus.shortname -%}
         {%- include disqus_comments.html -%}
         {%- endif -%}

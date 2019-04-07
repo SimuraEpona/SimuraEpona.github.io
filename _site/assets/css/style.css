@@ -2669,6 +2669,11 @@ span.badge { color: #ffffff; }
 .post-header .post-title { margin: 0; }
 .post-header .author-and-time { margin-top: 1rem; display: flex; align-items: center; }
 
+.donate { display: flex; flex-direction: column; }
+.donate .donate-imgs { display: flex; align-items: center; }
+.donate .donate-imgs img { width: 20%; }
+.donate .donate-imgs img:not(:first-child) { margin-left: 10px; }
+
 .tags-content { padding-left: 15px; padding-right: 15px; }
 
 .tags-title { display: flex; justify-content: center; align-items: center; }
