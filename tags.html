@@ -26,8 +26,8 @@ layout: default
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta grey-text" style="margin-left: 10px;">{{post.date | date: date_format}}</span>
     </div>
-    <hr class="grey">
     {% endif %}
     {%- endfor -%}
+    <hr class="grey">
     {% endfor %}
 </div>
