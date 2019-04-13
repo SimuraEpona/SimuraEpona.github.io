@@ -1,24 +1,8 @@
 <footer class="site-footer page-footer blue-grey">
-    <div class="container footer-container">
-      <div class="row">
-          <div class="col l6 s12">
-              <h5 class="white-text">
-                  {%- if site.author -%}
-                  {{ site.author | escape }}
-                  {%- else -%}
-                  {{ site.title | escape }}
-                  {%- endif -%}
-              </h5>
-              <p class="grey-text text-lighten-4">{{- site.description | escape -}}</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-              {%- include social.html -%}
-          </div>
-      </div>
-    </div>
     <div class="footer-copyright">
       <div class="container">
           <a class="grey-text text-lighten-4 left"  href="mailto:{{ site.email }}">{{ site.email }}</a>
+          {%- include social.html -%}
           <div class="busuanzi">
               <span id="busuanzi_container_site_uv" class="">总访客<span id="busuanzi_value_site_uv"></span></span>
               <span id="busuanzi_container_site_pv" class="">访问量<span id="busuanzi_value_site_pv"></span></span>
