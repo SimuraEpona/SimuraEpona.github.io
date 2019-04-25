@@ -5,6 +5,8 @@ tags: [Drafts, Github]
 
 > 本文主要参考自 [Blogging from Drafts](https://roub.net/blahg/2019/01/14/blogging-from-drafts/index.html)
 
+<!--more-->
+
 ## 首先
 
 那么我们怎样才能使用 Drafts 来上传我们的博客文章呢？简单来讲，我们需要4个步骤：
