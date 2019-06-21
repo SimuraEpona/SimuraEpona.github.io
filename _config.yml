@@ -1,31 +1,48 @@
-theme: minima
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-author: Epona
-email: datouhaoruijie@gmail.com
-
-minima:
-  date_format: "%Y-%m-%d"
-
-  # generate social links in footer
-  social_links:
-    twitter: kappelong
-    github:  SimuraEpona
-    rss: rss
-
-disqus:
-  shortname: blog-efievddr6w
-
-show_excerpts: true
+# Site settings
 title: 彩虹马厩
-description: There's nothing wrong with having a little fun!
-excerpt_separator: <!--more-->
+brief-intro: There's nothing wrong with having a little fun!
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://haoruijie.art" # the base hostname & protocol for your site
 
-plugins:
-  - jekyll-feed
-defaults:
-  -
-    scope:
-      path: "_posts" # 一个空的字符串代表项目中所有的文件
-    values:
-      comments: true
-      layout: "post"
+permalink: /:year/:month/:day/:title/
+
+# other links
+twitter_username: kappelong
+github_username:  SimuraEpona
+email: datouhaoruijie@gmail.com
+weibo_username:
+
+description_footer: There's nothing wrong with having a little fun!
+
+# comments
+# two ways to comment, only choose one, and use your own short name
+# 两种评论插件，选一个就好了，使用自己的 short_name
+disqus_shortname: blog-efievddr6w
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# port
+# port: 1234
+
+# url
+category_dir: category/
+tag_dir: tag/
+
+# excerpt
+excerpt_separator: "<!--more-->"
+
+# paginate
+gems: [jekyll-paginate]
+paginate: 6
