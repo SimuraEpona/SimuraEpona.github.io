@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "10.16"
+branches:
+  only:
+    - source
+
+install: npm install
+
+before_script:
+  - git config --global user.name "epona"
+  - git config --global user.email "490472721@qq.com"
+  - sed -i "s/GITHUB_API_KEY/${GITHUB_API_KEY}/" _config.yml
+
+script: npm run build

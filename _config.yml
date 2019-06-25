@@ -78,3 +78,5 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
+  repo: https://GITHUB_API_KEY@github.com/SimuraEpona/SimuraEpona.github.io
+  branch: master
