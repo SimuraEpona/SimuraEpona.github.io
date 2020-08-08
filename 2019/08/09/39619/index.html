@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.epona.me","root":"/","scheme":"Pisces","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="本文翻译自 4 Ways The Laravel Service Container Helps Us Managing Our Dependencies  在Laravel的世界里，服务容器（Service Container）是一个很复杂的话题，我看到有许多人在尝试搞清楚它到底是怎样的一个原理，但是我们仍然不太懂。对我来说也一样，这是因为很多的文章在解释怎样去“使用”服务容器。在这篇文章中，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4种服务容器的使用方法帮助我们管理依赖">
+<meta property="og:url" content="https://blog.epona.me/2019/08/09/39619/index.html">
+<meta property="og:site_name" content="彩虹马厩">
+<meta property="og:description" content="本文翻译自 4 Ways The Laravel Service Container Helps Us Managing Our Dependencies  在Laravel的世界里，服务容器（Service Container）是一个很复杂的话题，我看到有许多人在尝试搞清楚它到底是怎样的一个原理，但是我们仍然不太懂。对我来说也一样，这是因为很多的文章在解释怎样去“使用”服务容器。在这篇文章中，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://christoph-rumpel.com/images/blog/lca_container_bindings.png">
+<meta property="og:image" content="https://christoph-rumpel.com/images/blog/lca_container_not_shared.png">
+<meta property="og:image" content="https://christoph-rumpel.com/images/blog/lca_container_shared.png">
+<meta property="article:published_time" content="2019-08-09T00:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-08T14:40:18.656Z">
+<meta property="article:author" content="Epona">
+<meta property="article:tag" content="LARAVEL">
+<meta property="article:tag" content="DI">
+<meta property="article:tag" content="SERVICE CONTAINER">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://christoph-rumpel.com/images/blog/lca_container_bindings.png">
+
+<link rel="canonical" href="https://blog.epona.me/2019/08/09/39619/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>4种服务容器的使用方法帮助我们管理依赖 | 彩虹马厩</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="彩虹马厩" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">彩虹马厩</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">60</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">48</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/simuraepona" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.epona.me/2019/08/09/39619/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Epona">
+      <meta itemprop="description" content="There's nothing wrong with having a little fun!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="彩虹马厩">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          4种服务容器的使用方法帮助我们管理依赖
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-08-09 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-09T00:00:00+00:00">2019-08-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-08 14:40:18" itemprop="dateModified" datetime="2020-08-08T14:40:18+00:00">2020-08-08</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>本文翻译自 <a target="_blank" rel="noopener" href="https://christoph-rumpel.com/2019/08/4-ways-the-laravel-service-container-helps-us-managing-our-dependencies">4 Ways The Laravel Service Container Helps Us Managing Our Dependencies</a></p>
+</blockquote>
+<p>在Laravel的世界里，服务容器（Service Container）是一个很复杂的话题，我看到有许多人在尝试搞清楚它到底是怎样的一个原理，但是我们仍然不太懂。对我来说也一样，这是因为很多的文章在解释怎样去“使用”服务容器。在这篇文章中，我将给大家解释“什么”是服务容器以及“何时”服务容器能帮助我们处理我们的依赖。</p>
+<a id="more"></a>
+
+<p>首先我们举个栗子🌰，假设我们有一个导出数据的类。它能够导出指定用户的数据到CSV文件中。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserStatsCsvExporter</span> <span class="keyword">implements</span> <span class="title">UserStatsExporterContract</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">export</span>(<span class="params"><span class="keyword">int</span> $userId</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">         <span class="comment">// Load user statistics...</span></span><br><span class="line">         <span class="comment">// Export file...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在控制器中，我们会<code>new</code>一个类，然后调用里面的export方法。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExportController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        $userStatsExporter = <span class="keyword">new</span> UserStatsCsvExporter();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> $userStatsExporter-&gt;export(<span class="number">12</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于我们的控制器来说，这个导出类就是一个依赖。就像上面的例子，我们能够自己处理。那么为什么我们需要服务容器来管理我们的依赖呢？答案就是：控制器中的<code>handle</code>方法<strong>不应当有职责来创建导出类</strong>。它的职责应当只是调用<code>export</code>方法。这样的话我们也能服从反转控制原则。</p>
+<h2 id="自动解析"><a href="#自动解析" class="headerlink" title="自动解析"></a>自动解析</h2><p>这就是在我们有依赖的时候想要使用依赖注入的原因。那么与其在<code>handle</code>方法中新建一个类，不如直接注入。我们可以在控制器的构造函数中进行注入，也可以在Laravel中的方法中进行注入。这叫做<strong>方法注入（method-injection）</strong>。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params">UserStatsCsvExporter $userStatsExporter</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> $userStatsExporter-&gt;export(<span class="number">12</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过上面的注入我们能够直接调用<code>export</code>方法，而我们不需要告诉Laravel怎样初始化这个类。这个方法能成功，主要的原因是在Laravel框架底层已经使用了服务容器。更确切的说，我们使用了服务容器的<strong>自动解析（auto-resolving）</strong>功能。</p>
+<p>通过PHP的<a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/book.reflection.php">反射API</a>，Laravel能够找到我们的导出类并且为我们自动创建。这是一个非常棒的功能。</p>
+<p>但是，如果我们的导出类自己也包含依赖呢？</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserStatsCsvExporter</span> <span class="keyword">implements</span> <span class="title">UserStatsExporterContract</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** <span class="doctag">@var</span> Translator */</span></span><br><span class="line">    <span class="keyword">private</span> $translator;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params">Translator $translator</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;translator = $translator;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">export</span>(<span class="params"><span class="keyword">int</span> $userId</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// Load user statistics...</span></span><br><span class="line">        <span class="comment">// Export file...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如上面的代码，我们在导出类的构造函数中加入了一个<code>Translator</code>依赖。令人惊喜的是通过自动解析，代码仍然可以工作。所以，Laravel的自动解析功能十分聪明的为我们解决了相关的依赖问题。</p>
+<p>只要我们的依赖是这种简单的注入，而不需要传值进去，上面的代码就能够一直正常工作。</p>
+<h2 id="绑定到容器"><a href="#绑定到容器" class="headerlink" title="绑定到容器"></a>绑定到容器</h2><p>在<code>Translator</code>类中，我加入了一个新的构造函数需要我们在其初始化的时候传入一个<code>language</code>字符串。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Translator</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/** <span class="doctag">@var</span> string */</span></span><br><span class="line">    <span class="keyword">private</span> $language;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="keyword">string</span> $language</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;language = $language;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">translate</span>(<span class="params"><span class="keyword">string</span> $word</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// Translate word...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在由于Laravel不知道该传递什么值给<code>Translator</code>类，因此自动解析方法已经无法使用了。这时我们需要<strong>告诉Laravel怎样创建导出实例以及需要怎样的依赖</strong>。那么最好的地方是在服务提供者（service provider）中进行处理。</p>
+<p>下面我们新建一个 provider。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserStatsExporterProvider</span> <span class="keyword">extends</span> <span class="title">ServiceProvider</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;app-&gt;bind(UserStatsCsvExporter::class, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">new</span> UserStatsCsvExporter(<span class="keyword">new</span> Translator(config(<span class="string">&#x27;app.locale&#x27;</span>)));</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>在每个服务提供者中，我们能够使用<code>$this-&gt;app</code>来获得服务容器。我们新写入的<code>language</code>字符串通过配置文件进行载入。我们需要新建导出实例的相关内容已经保存到了服务容器实例中。这样当我们需要导出类的时候，我们不必再写其他的代码来创建了。</p>
+<p>如果你想的话，你可以使用<code>dd(app()</code>查看一下现在的服务容器，在<code>bindings</code>属性下面，你会发现已经包含了我们的导出类。</p>
+<p><img src="https://christoph-rumpel.com/images/blog/lca_container_bindings.png" alt="bindings"></p>
+<h2 id="绑定到接口"><a href="#绑定到接口" class="headerlink" title="绑定到接口"></a>绑定到接口</h2><p>你已经看到了我们的CSV导出类继承了一个接口（interface）。这是因为我们还有一个类是用来处理导出成XML格式的。它同样也继承了接口。假设我们现在需要将控制器中的CSV导出类替换成XML导出类。</p>
+<p>当然，我们可以在控制器中使用XML类然后修改服务提供者中的代码。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params">UserStatsXmlExporter $userStatsExporter</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> $userStatsExporter-&gt;export(<span class="number">12</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;app-&gt;bind(UserStatsXmlExporter::class, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> UserStatsXmlExporter(<span class="keyword">new</span> Translator(config(<span class="string">&#x27;app.locale&#x27;</span>))</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>虽然上面的修改能够满足我们的需求，但是有一个更好的处理办法。由于我们已经定义了一个接口，与其使用CSV导出类或者XML导出类，不如我们直接使用接口。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params">UserStatsExporterContract $userStatsExporter</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> $userStatsExporter-&gt;export(<span class="number">12</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要让上面代码工作，我们还需要改动服务提供者的代码。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;app-&gt;bind(UserStatsExporterContract::class, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> UserStatsXmlExporter(<span class="keyword">new</span> Translator(config(<span class="string">&#x27;app.locale&#x27;</span>)));</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以后如果我们需要换回CSV导出类或者其他的导出类，我们只需要更改服务提供者的代码即可。</p>
+<h2 id="共享实例"><a href="#共享实例" class="headerlink" title="共享实例"></a>共享实例</h2><p>在这篇文章里我想最后介绍一下关于服务容器的一个功能就是共享。当我们检查2个同样的导出类时，你会看到两个不同的ID。这表示我们创建了2个实例。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params">UserStatsExporterContract $userStatsExporter</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    dd(app(UserStatsExporterContract::class), app(UserStatsExporterContract::class));</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> $userStatsExporter-&gt;export(<span class="number">12</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://christoph-rumpel.com/images/blog/lca_container_not_shared.png" alt="share"></p>
+<p>对于大多数情况来说，这可能就是我们所需要的，但是某些情况下我们需要返回同样的实例。要达成这样的目的，我们仅需要使用<code>singleton</code>来替换<code>bind</code>方法即可。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;app-&gt;singleton(UserStatsExporterContract::class, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> UserStatsXmlExporter(<span class="keyword">new</span> Translator(config(<span class="string">&#x27;app.locale&#x27;</span>)));</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://christoph-rumpel.com/images/blog/lca_container_shared.png" alt="share"></p>
+<p>你可以看到ID已经一致了。这样做的原因主要有2个：</p>
+<ol>
+<li>保存状态</li>
+</ol>
+<p>当你在实例中保存了一些信息，其他部分的程序访问的时候这些信息仍然在那里。</p>
+<ol start="2">
+<li>性能更好</li>
+</ol>
+<p>有些时候创建实例并不是简单的新建一个类就可以。你可能需要处理很多的依赖，导入配置等等。在这种情况下，共享已经创建号的实例会比重新创建的性能要好一些。</p>
+<p>一个很好的例子就是Laravel的数据库服务，当你使用的时候，它需要创建一个与你数据库的连接。那么在整个程序执行的过程中，保持这个连接是一个很好的实现。而不必每次调用数据库服务的时候再创建。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>这篇文章介绍了4种服务容器的使用方法。希望能够让你们明白“为什么”以及“何时”使用服务容器。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    赞赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechat.jpg" alt="Epona 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Epona 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/LARAVEL/" rel="tag"># LARAVEL</a>
+              <a href="/tags/DI/" rel="tag"># DI</a>
+              <a href="/tags/SERVICE-CONTAINER/" rel="tag"># SERVICE CONTAINER</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/08/02/73525/" rel="prev" title="怎样在数据库中存储货币">
+      <i class="fa fa-chevron-left"></i> 怎样在数据库中存储货币
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/08/16/58264/" rel="next" title="Laravel中“记住我”原理分析">
+      Laravel中“记住我”原理分析 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E8%A7%A3%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">自动解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A%E5%88%B0%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">绑定到容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A%E5%88%B0%E6%8E%A5%E5%8F%A3"><span class="nav-number">3.</span> <span class="nav-text">绑定到接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB%E5%AE%9E%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">共享实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-number">5.</span> <span class="nav-text">结论</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Epona"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Epona</p>
+  <div class="site-description" itemprop="description">There's nothing wrong with having a little fun!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/simuraepona" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;simuraepona" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:epona@hey.com" title="E-Mail → mailto:epona@hey.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/simura_epona" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;simura_epona" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Epona</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'd01ecfc7337f8bd4081d',
+      clientSecret: '9b3fc67fc82bf4d6f766d389394cadc68e5cca37',
+      repo        : 'SimuraEpona.github.io',
+      owner       : 'SimuraEpona',
+      admin       : ['SimuraEpona'],
+      id          : 'ce1da1d32222427323473dcb625f38b0',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
