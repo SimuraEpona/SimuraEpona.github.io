@@ -6,7 +6,6 @@ author: epona
 layout: post
 guid: https://wp.epona.me/?p=38
 permalink: /2020/08/15/how-to-backup-mysql-database-and-upload-to-dropbox/
-image: /wp-content/uploads/2020/08/dropbox-product-image.png
 categories:
   - PROGRAMMING
 tags:

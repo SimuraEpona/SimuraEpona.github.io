@@ -1,5 +1,4 @@
 ---
-id: 129
 title: Leetcode —— Palindrome Number
 date: 2021-03-07T20:50:48+09:00
 author: epona
@@ -8,9 +7,7 @@ excerpt: |
   
   An integer is a palindrome when it reads the same backward as forward. For example, 121 is palindrome while 123 is not.
 layout: post
-guid: https://wp.epona.me/?p=129
-permalink: /2021/03/07/leetcode-palindrome-number/
-image: /wp-content/uploads/2021/02/LeetCode_Sharing.png
+permalink: /leetcode-palindrome-number/
 categories:
   - LEETCODE
   - PROGRAMMING

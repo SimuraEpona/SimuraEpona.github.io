@@ -1,5 +1,4 @@
 ---
-id: 121
 title: Leetcode —— two_sum
 date: 2021-02-25T22:37:46+09:00
 author: epona
@@ -16,9 +15,7 @@ excerpt: |
   <p>You can return the answer in any order.</p>
   <!-- /wp:paragraph -->
 layout: post
-guid: https://wp.epona.me/?p=121
-permalink: /2021/02/25/leetcode-two_sum/
-image: /wp-content/uploads/2021/02/LeetCode_Sharing.png
+permalink: /leetcode-two_sum/
 categories:
   - LEETCODE
   - PROGRAMMING

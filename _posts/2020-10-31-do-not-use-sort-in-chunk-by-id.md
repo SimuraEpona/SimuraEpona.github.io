@@ -1,12 +1,9 @@
 ---
-id: 96
 title: 使用 chunkById 方法的时候请不要进行排序
 date: 2020-10-31T13:42:59+09:00
 author: epona
 layout: post
-guid: https://wp.epona.me/?p=96
-permalink: '/2020/10/31/%e4%bd%bf%e7%94%a8-chunkbyid-%e6%96%b9%e6%b3%95%e7%9a%84%e6%97%b6%e5%80%99%e8%af%b7%e4%b8%8d%e8%a6%81%e8%bf%9b%e8%a1%8c%e6%8e%92%e5%ba%8f/'
-image: /wp-content/uploads/2020/10/carbon.png
+permalink: '/do-not-use-sort-in-chunk-by-id/'
 categories:
   - PROGRAMMING
 ---

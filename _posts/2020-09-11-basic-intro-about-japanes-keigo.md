@@ -1,13 +1,10 @@
 ---
-id: 85
 title: 日语中敬语的基本介绍
 date: 2020-09-11T17:28:39+09:00
 author: epona
 excerpt: 在日语中敬语应该是十分重要的内容了，在这一节会为大家介绍敬语的种类。敬语可以分成尊敬语，谦让语和丁宁语三种。如果我们不能正确使用这三种敬语的话，那么我们就有可能会说出一些比较不礼貌的日语。
 layout: post
-guid: https://wp.epona.me/?p=85
-permalink: /2020/09/11/basic-intro-about-japanes-keigo/
-image: /wp-content/uploads/2020/09/9784487802203.jpg
+permalink: /basic-intro-about-japanes-keigo/
 categories:
   - JAPANESE
 tags:

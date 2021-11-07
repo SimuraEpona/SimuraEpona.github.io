@@ -1,13 +1,10 @@
 ---
-id: 100
 title: 《一往无前》(小米成长传记)简单读后感
 date: 2020-12-05T13:48:53+09:00
 author: epona
 excerpt: 在上个月凭借着Kindle Unlimited会员限免时候，读完了这本书一往无前（小米官方授权传记；首次完整揭秘小米独特商业模式，揭露诸多雷军创业过程及小米成长历程从未对外公开的故事），简单分享一下自己的读后感。
 layout: post
-guid: https://wp.epona.me/?p=100
-permalink: /2020/12/05/yi-wang-wu-qian/
-image: /wp-content/uploads/2020/12/685059160-1.jpeg
+permalink: /yi-wang-wu-qian/
 categories:
   - Book
 ---

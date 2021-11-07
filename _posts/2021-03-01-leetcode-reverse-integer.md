@@ -1,12 +1,10 @@
 ---
-id: 126
 title: Leetcode —— Reverse Integer
 date: 2021-03-01T22:17:42+09:00
 author: epona
 excerpt: 'Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.'
 layout: post
-guid: https://wp.epona.me/?p=126
-permalink: /2021/03/01/leetcode-reverse-integer/
+permalink: /leetcode-reverse-integer/
 image: /wp-content/uploads/2021/02/LeetCode_Sharing.png
 categories:
   - LEETCODE

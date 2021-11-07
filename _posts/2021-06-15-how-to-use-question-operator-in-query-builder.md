@@ -1,19 +1,17 @@
 ---
-id: 133
 title: 怎样在QueryBuilder中使用PostgreSQL中的?操作符
 date: 2021-06-15T21:51:54+09:00
 author: epona
 excerpt: 在我们使用Laravel的QueryBuilder中的whereRaw()的时候，? 会被当作Bindings来进行处理。但是在PostgreSQL中存在着许多?的操作符。本文将会介绍怎样处理?操作符。
 layout: post
-guid: https://wp.epona.me/?p=133
-permalink: '/2021/06/15/%e6%80%8e%e6%a0%b7%e5%9c%a8querybuilder%e4%b8%ad%e4%bd%bf%e7%94%a8/'
-image: /wp-content/uploads/2021/06/carbon.png
+permalink: '/how-to-use-question-operator-in-query-builder/'
 categories:
   - PROGRAMMING
 tags:
   - Laravel
   - SQL
 ---
+
 在我们使用Laravel的QueryBuilder中的`whereRaw()`的时候，`?` 会被当作Bindings来进行处理。但是在PostgreSQL中存在着许多`?`的操作符。本文将会介绍怎样处理`?`操作符。
 
 ## Laravel中whereRaw的基本使用
