@@ -6,7 +6,7 @@
     "version": "5.4.0"
   },
   "scripts": {
-    "build": "hexo clean && hexo generate && hexo deploy"
+    "build": "hexo clean && hexo generate"
   },
   "dependencies": {
     "hexo": "^5.0.0",
