@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - source  # default branch
+  workflow_dispatch:
 
 jobs:
   pages:
