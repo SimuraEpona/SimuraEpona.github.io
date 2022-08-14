@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="generator" content="Hexo 6.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="本文主要展示怎样在 Ubuntu 下安装 MongoDB 4.0 社区版。如果是在生产环境中使用，请先参考这里 支持的 Ubuntu 版本 16.04 LTS (xenial) 18.04 LTS (bionic)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-06-11T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-01-05T10:01:57.528Z">
+<meta property="article:modified_time" content="2022-08-14T07:29:58.993Z">
 <meta property="article:author" content="Epona">
 <meta property="article:tag" content="UBUNTU">
 <meta property="article:tag" content="MONGODB">
@@ -194,7 +194,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-05 10:01:57" itemprop="dateModified" datetime="2022-01-05T10:01:57+00:00">2022-01-05</time>
+                <time title="修改时间：2022-08-14 07:29:58" itemprop="dateModified" datetime="2022-08-14T07:29:58+00:00">2022-08-14</time>
               </span>
 
           
@@ -225,9 +225,9 @@
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="向系统中引入-GPG-key"><a href="#向系统中引入-GPG-key" class="headerlink" title="向系统中引入 GPG key"></a>向系统中引入 GPG key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4</span><br></pre></td></tr></table></figure>
 
 <h3 id="为-MongoDB-创建列表文件"><a href="#为-MongoDB-创建列表文件" class="headerlink" title="为 MongoDB 创建列表文件"></a>为 MongoDB 创建列表文件</h3><p>根据版本的不同选择合适的命令来创建<code>/etc/apt/sources.list.d/mongodb-org-4.0.list</code>文件。</p>
-<h4 id="18-04"><a href="#18-04" class="headerlink" title="18.04"></a>18.04</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse&quot;</span> | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list</span><br></pre></td></tr></table></figure>
+<h4 id="18-04"><a href="#18-04" class="headerlink" title="18.04"></a>18.04</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/mongodb-org-4.0.list</span><br></pre></td></tr></table></figure>
 
-<h4 id="16-04"><a href="#16-04" class="headerlink" title="16.04"></a>16.04</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse&quot;</span> | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list</span><br></pre></td></tr></table></figure>
+<h4 id="16-04"><a href="#16-04" class="headerlink" title="16.04"></a>16.04</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/mongodb-org-4.0.list</span><br></pre></td></tr></table></figure>
 
 <h3 id="系统软件更新"><a href="#系统软件更新" class="headerlink" title="系统软件更新"></a>系统软件更新</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
 
@@ -259,7 +259,7 @@
 
 <h3 id="移除应用程序"><a href="#移除应用程序" class="headerlink" title="移除应用程序"></a>移除应用程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get purge mongodb-org*</span><br></pre></td></tr></table></figure>
 
-<h3 id="删除关联文件夹"><a href="#删除关联文件夹" class="headerlink" title="删除关联文件夹"></a>删除关联文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -r /var/<span class="built_in">log</span>/mongodb</span><br><span class="line">sudo rm -r /var/lib/mongodb</span><br></pre></td></tr></table></figure>
+<h3 id="删除关联文件夹"><a href="#删除关联文件夹" class="headerlink" title="删除关联文件夹"></a>删除关联文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">rm</span> -r /var/log/mongodb</span><br><span class="line">sudo <span class="built_in">rm</span> -r /var/lib/mongodb</span><br></pre></td></tr></table></figure>
 
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/">install-mongodb-on-ubuntu</a></p>
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.0.0">
+<meta name="generator" content="Hexo 6.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="今天在开发的时候碰到了一个dingo的坑，遂分享一下。  前言目前在项目中使用的Laravel版本是5.5，dingo版本为”dev-master”。一直以来相安无事。直到今天……">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-06-25T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-01-05T10:01:57.528Z">
+<meta property="article:modified_time" content="2022-08-14T07:29:58.993Z">
 <meta property="article:author" content="Epona">
 <meta property="article:tag" content="LARAVEL">
 <meta property="article:tag" content="VERSION">
@@ -195,7 +195,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-05 10:01:57" itemprop="dateModified" datetime="2022-01-05T10:01:57+00:00">2022-01-05</time>
+                <time title="修改时间：2022-08-14 07:29:58" itemprop="dateModified" datetime="2022-08-14T07:29:58+00:00">2022-08-14</time>
               </span>
 
           
@@ -228,7 +228,7 @@
 <p>主要引起的原因为我们使用了 FormRequest 请求类。</p>
 <p>接着定位到错误代码为dingo中的代码，查找一番后，在GitHub中的一条 <a target="_blank" rel="noopener" href="https://github.com/dingo/api/commit/37744e2093ffac8dff7918e7c98eebfc67fba337">commit 讨论</a>中发现是由于最新的代码导致的，并且根据回复，需要将dingo版本指定到<code>2.2.3</code>版本即可。</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>将<code>composer.json</code>中的dingo指定版本即可。</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;dingo/api&quot;</span>: <span class="string">&quot;2.2.3&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;dingo/api&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.2.3&quot;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>我们应当在日常开发中指定composer包中的版本，避免发生不必要的错误异常。</p>
 

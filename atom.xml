@@ -6,7 +6,7 @@
   <link href="https://blog.epona.me/atom.xml" rel="self"/>
   
   <link href="https://blog.epona.me/"/>
-  <updated>2022-01-05T10:01:57.544Z</updated>
+  <updated>2022-08-14T07:29:59.005Z</updated>
   <id>https://blog.epona.me/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.epona.me/how-to-remove-icon-from-dock/"/>
     <id>https://blog.epona.me/how-to-remove-icon-from-dock/</id>
     <published>2021-08-12T23:58:30.000Z</published>
-    <updated>2022-01-05T10:01:57.544Z</updated>
+    <updated>2022-08-14T07:29:59.005Z</updated>
     
     
     <summary type="html">&lt;blockquote class=&quot;wp-block-quote&quot;&gt;
@@ -46,7 +46,7 @@
     <link href="https://blog.epona.me/how-to-use-question-operator-in-query-builder/"/>
     <id>https://blog.epona.me/how-to-use-question-operator-in-query-builder/</id>
     <published>2021-06-15T12:51:54.000Z</published>
-    <updated>2022-01-05T10:01:57.544Z</updated>
+    <updated>2022-08-14T07:29:59.005Z</updated>
     
     
     <summary type="html">在我们使用Laravel的QueryBuilder中的whereRaw()的时候，? 会被当作Bindings来进行处理。但是在PostgreSQL中存在着许多?的操作符。本文将会介绍怎样处理?操作符。</summary>
@@ -67,7 +67,7 @@
     <link href="https://blog.epona.me/leetcode-palindrome-number/"/>
     <id>https://blog.epona.me/leetcode-palindrome-number/</id>
     <published>2021-03-07T11:50:48.000Z</published>
-    <updated>2022-01-05T10:01:57.544Z</updated>
+    <updated>2022-08-14T07:29:59.005Z</updated>
     
     
     <summary type="html">Given an integer x, return true if x is palindrome integer.
@@ -95,7 +95,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/leetcode-reverse-integer/"/>
     <id>https://blog.epona.me/leetcode-reverse-integer/</id>
     <published>2021-03-01T13:17:42.000Z</published>
-    <updated>2022-01-05T10:01:57.544Z</updated>
+    <updated>2022-08-14T07:29:59.005Z</updated>
     
     
     <summary type="html">Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.</summary>
@@ -118,7 +118,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/leetcode-two_sum/"/>
     <id>https://blog.epona.me/leetcode-two_sum/</id>
     <published>2021-02-25T13:37:46.000Z</published>
-    <updated>2022-01-05T10:01:57.544Z</updated>
+    <updated>2022-08-14T07:29:59.005Z</updated>
     
     
     <summary type="html">&lt;!-- wp:paragraph --&gt;
@@ -152,7 +152,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/2020-summary/"/>
     <id>https://blog.epona.me/2020-summary/</id>
     <published>2020-12-26T09:06:51.000Z</published>
-    <updated>2022-01-05T10:01:57.536Z</updated>
+    <updated>2022-08-14T07:29:58.997Z</updated>
     
     
     <summary type="html">不知不觉一年马上就要过去了。那么例行公事总结一下一年的成果。</summary>
@@ -171,7 +171,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/yi-wang-wu-qian/"/>
     <id>https://blog.epona.me/yi-wang-wu-qian/</id>
     <published>2020-12-05T04:48:53.000Z</published>
-    <updated>2022-01-05T10:01:57.536Z</updated>
+    <updated>2022-08-14T07:29:58.997Z</updated>
     
     
     <summary type="html">在上个月凭借着Kindle Unlimited会员限免时候，读完了这本书一往无前（小米官方授权传记；首次完整揭秘小米独特商业模式，揭露诸多雷军创业过程及小米成长历程从未对外公开的故事），简单分享一下自己的读后感。</summary>
@@ -188,7 +188,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/do-not-use-sort-in-chunk-by-id/"/>
     <id>https://blog.epona.me/do-not-use-sort-in-chunk-by-id/</id>
     <published>2020-10-31T04:42:59.000Z</published>
-    <updated>2022-01-05T10:01:57.536Z</updated>
+    <updated>2022-08-14T07:29:58.997Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;使用-chunkById-方法的时候请不要进行排序&quot;&gt;&lt;a href=&quot;#使用-chunkById-方法的时候请不要进行排序&quot; class=&quot;headerlink&quot; title=&quot;使用 chunkById 方法的时候请不要进行排序&quot;&gt;&lt;/a&gt;使用 chunkById 方法的时候请不要进行排序&lt;/h1&gt;&lt;blockquote&gt;
@@ -217,7 +217,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/basic-intro-about-japanes-keigo/"/>
     <id>https://blog.epona.me/basic-intro-about-japanes-keigo/</id>
     <published>2020-09-11T08:28:39.000Z</published>
-    <updated>2022-01-05T10:01:57.536Z</updated>
+    <updated>2022-08-14T07:29:58.997Z</updated>
     
     
     <summary type="html">在日语中敬语应该是十分重要的内容了，在这一节会为大家介绍敬语的种类。敬语可以分成尊敬语，谦让语和丁宁语三种。如果我们不能正确使用这三种敬语的话，那么我们就有可能会说出一些比较不礼貌的日语。</summary>
@@ -238,7 +238,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/2020/08/15/how-to-backup-mysql-database-and-upload-to-dropbox/"/>
     <id>https://blog.epona.me/2020/08/15/how-to-backup-mysql-database-and-upload-to-dropbox/</id>
     <published>2020-08-15T02:37:39.000Z</published>
-    <updated>2022-01-05T10:01:57.536Z</updated>
+    <updated>2022-08-14T07:29:58.997Z</updated>
     
     
     <summary type="html">&lt;p&gt;in this post, I will show you how to backup MySQL database in docker and upload it to &lt;a href=&quot;https://www.dropbox.com/&quot;&gt;Dropbox&lt;/a&gt;.&lt;/p&gt;
@@ -260,7 +260,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/2020/08/08/the-breif-review-of-iwata/"/>
     <id>https://blog.epona.me/2020/08/08/the-breif-review-of-iwata/</id>
     <published>2020-08-08T23:36:15.000Z</published>
-    <updated>2022-01-05T10:01:57.536Z</updated>
+    <updated>2022-08-14T07:29:58.997Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -287,7 +287,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/2020/03/12/get-date-range-in-php/"/>
     <id>https://blog.epona.me/2020/03/12/get-date-range-in-php/</id>
     <published>2020-03-12T22:21:04.000Z</published>
-    <updated>2022-01-05T10:01:57.536Z</updated>
+    <updated>2022-08-14T07:29:58.997Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近在工作中碰到了这样一个需求，根据开始日期和结束日期生成一个按天计的数组，虽然我们可以通过&lt;code&gt;foreach&lt;/code&gt;办到，但是有没有什么更加优雅的方法呢？经过一番搜索之后，找到了这样的一个类——&lt;a href=&quot;https://www.php.net/manual/zh/class.dateperiod.php&quot;&gt;&lt;code&gt;DatePeriod&lt;/code&gt;&lt;/a&gt;。&lt;/p&gt;
@@ -308,7 +308,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/2020/02/24/designer-03/"/>
     <id>https://blog.epona.me/2020/02/24/designer-03/</id>
     <published>2020-02-24T20:57:00.000Z</published>
-    <updated>2022-01-05T10:01:57.532Z</updated>
+    <updated>2022-08-14T07:29:58.997Z</updated>
     
     
       
@@ -333,7 +333,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/2020/02/11/designer-02/"/>
     <id>https://blog.epona.me/2020/02/11/designer-02/</id>
     <published>2020-02-11T16:19:20.000Z</published>
-    <updated>2022-01-05T10:01:57.532Z</updated>
+    <updated>2022-08-14T07:29:58.997Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/02/11/designer-02/draft.jpeg&quot; class=&quot;&quot;&gt;
@@ -354,7 +354,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/2020/02/03/designer-01/"/>
     <id>https://blog.epona.me/2020/02/03/designer-01/</id>
     <published>2020-02-03T22:19:20.000Z</published>
-    <updated>2022-01-05T10:01:57.532Z</updated>
+    <updated>2022-08-14T07:29:58.993Z</updated>
     
     
       
@@ -381,7 +381,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/2020/02/02/how-to-restore-database-dumps-for-postgres-in-docker/"/>
     <id>https://blog.epona.me/2020/02/02/how-to-restore-database-dumps-for-postgres-in-docker/</id>
     <published>2020-02-02T14:57:23.000Z</published>
-    <updated>2022-01-05T10:01:57.532Z</updated>
+    <updated>2022-08-14T07:29:58.993Z</updated>
     
     
     <summary type="html">&lt;p&gt;我在日常开发中使用的数据库是PostgreSQL，并且最近使用了Laradock的Docker环境。最近碰到了一个需要将数据库的dump文件倒入到Docker中的Postgres中的问题, 于是进行一下简单的记录。&lt;/p&gt;
@@ -401,7 +401,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/2020/01/03/ui-design-part1/"/>
     <id>https://blog.epona.me/2020/01/03/ui-design-part1/</id>
     <published>2020-01-03T22:15:44.000Z</published>
-    <updated>2022-01-05T10:01:57.528Z</updated>
+    <updated>2022-08-14T07:29:58.993Z</updated>
     
     
     <summary type="html">&lt;p&gt;作为一个多年的程序员一直在写API，虽然偶尔也写一些前端。但是只能对着别人做好的设计图来处理。那么问题来了，如果做一些自己的项目的时候就没有UI图了，要么有个关系好的朋友恰巧会UI，要么就只能花钱了。两者都不是什么长久之计。一直以来自己也想学一些UI设计，好让自己做出来的页面不那么难看，但是总归找不到合适的学习资料，网上的一些公开的视频教程什么的只是按部就班的教你画UI，而不会教你为什么，充其量只能算是一个软件教程罢了。&lt;/p&gt;
@@ -424,7 +424,7 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/2019/12/24/83501/"/>
     <id>https://blog.epona.me/2019/12/24/83501/</id>
     <published>2019-12-24T00:00:00.000Z</published>
-    <updated>2022-01-05T10:01:57.528Z</updated>
+    <updated>2022-08-14T07:29:58.993Z</updated>
     
     
     <summary type="html">&lt;p&gt;马上就到2020了，于是做一下2019年的总结😂。&lt;/p&gt;
@@ -442,11 +442,11 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/2019/11/06/39906/"/>
     <id>https://blog.epona.me/2019/11/06/39906/</id>
     <published>2019-11-06T00:00:00.000Z</published>
-    <updated>2022-01-05T10:01:57.528Z</updated>
+    <updated>2022-08-14T07:29:58.993Z</updated>
     
     
     <summary type="html">&lt;p&gt;近日在Ubuntu上部署了一个Phoenix程序，同时使用了Nginx来进行域名绑定。虽然页面可以正常访问，但是Socket无法连接，经过一番搜索。终于解决。Nginx配置如下&lt;/p&gt;
-&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;upstream&lt;/span&gt; lab_upstream &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;127.0.7.1:4000&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[...]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attribute&quot;&gt;location&lt;/span&gt; / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; X-Real-IP $remote_addr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; X-Cluster-Client-Ip $remote_addr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; X-Forwarded-For $proxy_add_x_forwarded_for;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; Host $http_host;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_redirect&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;off&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_pass&lt;/span&gt; http://lab_upstream;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; Upgrade $http_upgrade;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; Connection &lt;span class=&quot;string&quot;&gt;&amp;quot;upgrade&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_read_timeout&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3600&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_send_timeout&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3600&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 &lt;span class=&quot;attribute&quot;&gt;proxy_http_version&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; //需要加上这一行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;upstream&lt;/span&gt; lab_upstream &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;127.0.7.1:4000&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[...]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;section&quot;&gt;location&lt;/span&gt; / &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; X-Real-IP &lt;span class=&quot;variable&quot;&gt;$remote_addr&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; X-Cluster-Client-Ip &lt;span class=&quot;variable&quot;&gt;$remote_addr&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; X-Forwarded-For &lt;span class=&quot;variable&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; Host &lt;span class=&quot;variable&quot;&gt;$http_host&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_redirect&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;off&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_pass&lt;/span&gt; http://lab_upstream;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; Upgrade &lt;span class=&quot;variable&quot;&gt;$http_upgrade&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_set_header&lt;/span&gt; Connection &lt;span class=&quot;string&quot;&gt;&amp;quot;upgrade&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_read_timeout&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3600&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;proxy_send_timeout&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;3600&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	 &lt;span class=&quot;attribute&quot;&gt;proxy_http_version&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; //需要加上这一行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
@@ -462,11 +462,11 @@ An integer is a palindrome when it reads the same backward as forward. For examp
     <link href="https://blog.epona.me/2019/11/01/38222/"/>
     <id>https://blog.epona.me/2019/11/01/38222/</id>
     <published>2019-11-01T00:00:00.000Z</published>
-    <updated>2022-01-05T10:01:57.528Z</updated>
+    <updated>2022-08-14T07:29:58.993Z</updated>
     
     
     <summary type="html">&lt;p&gt;在Elixir中，模块可以简单的理解为多个函数的集合，可以使用&lt;code&gt;defmodule&lt;/code&gt;宏来创建。例如我们之前使用过的&lt;a href=&quot;https://hexdocs.pm/elixir/String.html&quot;&gt;String 模块&lt;/a&gt;。&lt;/p&gt;
-&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;iex&amp;gt; defmodule &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&amp;gt;   def sum(a, b) &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&amp;gt;     a + b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&amp;gt;   end&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&amp;gt; end&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iex&amp;gt; &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.sum(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;iex&amp;gt; defmodule &lt;span class=&quot;title class_&quot;&gt;Math&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&amp;gt;   def &lt;span class=&quot;title function_&quot;&gt;sum&lt;/span&gt;(a, b) &lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&amp;gt;     a + b&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&amp;gt;   end&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&amp;gt; end&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iex&amp;gt; &lt;span class=&quot;title class_&quot;&gt;Math&lt;/span&gt;.&lt;span class=&quot;title function_&quot;&gt;sum&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
