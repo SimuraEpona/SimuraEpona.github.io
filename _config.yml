@@ -6,3 +6,4 @@ exclude:
   - .idea
   - Gemfile
   - Gemfile.lock
+  - vendor
